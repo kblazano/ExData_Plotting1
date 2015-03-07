@@ -15,9 +15,7 @@ sub_data[,"Global_active_power"] <- as.numeric(sub_data[,"Global_active_power"])
 
 sub_data[,"DateTime"] <- paste(sub_data[,"Date"], sub_data[,"Time"], sep=" ")
 
-png(filename = "plot2.png", 
-    width = 480, height = 480,
-    units = "px", bg = "transparent")
+png("plot2.png", width = 480, height = 480)
 plot(as.POSIXct(sub_data[,"DateTime"]), sub_data[,"Global_active_power"], type="l", 
      xlab="", ylab="Global Active Power (kilowatts)")
 dev.off()
